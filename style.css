@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.purple{
+    color:#c824d4;
+}
+#vid-parent {
+    position: fixed;
+    width: 100%;
+    height: 100%; /* Ensure it covers the full viewport height */
+    overflow: hidden;
+    z-index: -1;
+}
+#vid-parent .img-fluid {
+    width: 100%;
+    height: 100%; /* Ensure it covers the full parent height */
+    object-fit: cover; /* Ensure the image covers the entire area */
+}
+#content{
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: auto;
+}
+/* form background */
+
+.form{
+    background-color: transparent;
+    padding: 40px 20px;
+    width: 100%;
+    /* max-width: 300px; */
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px #666;
+}
+.input-group{
+    position: relative;
+}
+.input{
+    padding: 10px;
+    width: 100%;
+    /* max-width: 300px; */
+    box-sizing: border-box;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #053a26;
+    border-style: solid;
+    border-color: rgb(145, 141, 141);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.placeholder{
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    font-size: 14px;
+    padding: 0px 5px;
+    color: white;
+    transition: 0.3s;
+    pointer-events: none;
+}
+.input:focus + .placeholder{
+    top: -10px;
+    color: white;
+    background-color: transparent;
+}
+
+.gradient-btn {
+    background: linear-gradient(to right, #e673eb, #c824d4, #142440);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 10px 30px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.gradient-btn:hover {
+    background: linear-gradient(to right, #142440, #c824d4, #e673eb);
+    transform: scale(1.05);
+}
+
+.gradient-btn:active {
+    transform: scale(1);
+}
+
+/* icon */
+.foricon a {
+    border: 13px solid transparent;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    line-height: 1; /* Ensure line-height is consistent */
+}
+
+.bi-facebook, .bi-twitter, .bi-instagram, .bi-youtube {
+    font-size: large;
+    transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+
+.bi-facebook {
+    color: #3b5998;
+}
+
+.bi-facebook:hover {
+    color: #fff;
+    background-color: #3b5998;
+    box-shadow: 0 0 10px #3b5998; /* Add shadow for hover effect */
+    border-radius: 30%;
+}
+
+.bi-twitter {
+    color: #00acee;
+}
+
+.bi-twitter:hover {
+    background-color: #00acee;
+    color: #FFF;
+    box-shadow: 0 0 10px #00acee; /* Add shadow for hover effect */
+    border-radius: 30%;
+}
+
+.bi-instagram {
+    background: linear-gradient(to bottom, #E1306C 0%, #FD1D1D 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+
+.bi-instagram:hover {
+    -webkit-text-fill-color: #fff; /* Change text color to white */
+    color: #fff; /* Fallback for other browsers */
+    background-color: #FD1D1D; /* Adjust the background color on hover */
+    box-shadow: 0 0 10px #FD1D1D; /* Add shadow for hover effect */
+    border-radius: 30%;
+    text-decoration: none; /* Remove underline if any */
+}
+
+.bi-youtube {
+    color: #FF0000;
+}
+
+.bi-youtube:hover {
+    color: #fff;
+    background-color: #FF0000;
+    box-shadow: 0 0 10px #FF0000; /* Add shadow for hover effect */
+    border-radius: 30%;
+}
+
+
+
+
+
+.bgTransparent {
+    background-color: #142440;
+    z-index: 2;
+    box-shadow: 0px 0px 10px 0px #fffefe;
+    border-radius: 15px;
+    backdrop-filter: blur(0.2px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation styles */
+.bgTransparent::before {
+    content: "";
+    background-image: conic-gradient(#c824d4 20deg, transparent 120deg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rotate 2.5s linear infinite;
+    border-radius: inherit; /* Ensure the gradient matches the border radius */
+    z-index: 1; /* Ensure the gradient is above the inner-content */
+}
+
+.inner-content {
+    position: relative;
+    background: #142440; /* Inner background color */
+    border-radius: 10px;
+    padding: 20px;
+    color: #c824d4; /* Text color */
+    z-index: 2; /* Ensure content is above the gradient */
+    width: 100%;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
